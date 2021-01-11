@@ -81,8 +81,8 @@ nav > div:first-of-type {
     padding: 10px 0px 15px 5px;
 }
 
-nav > div.active a {
-    text-decoration: underline;
+div.active {
+    border-bottom: 2px solid #000
 }
 
 nav > div a {
@@ -118,7 +118,7 @@ nav > div a {
 }
 
 .syl-sec {
-    margin-bottom: 33px;
+    margin-bottom: 45px;
 }
 
 .right {
@@ -134,15 +134,11 @@ nav > div a {
 h3 {
     font-family: degular-display, serif;
     font-size: 100px;
-    line-height: 1;
+    line-height: 0.8;
     margin-top: -25px;
     margin-bottom: 10px;
 }
 
-#syllabus h3 {
-    margin-bottom: 10px;
-    line-height: 0.8;
-}
 
 
 .syl-text a {
@@ -152,6 +148,10 @@ h3 {
 
 #schedule {
     min-width: 600px;
+}
+
+#schedule a {
+    color: #000;
 }
 
 .grid-container {
@@ -240,6 +240,18 @@ li {
     background-color: blue;
 }
 
+.optional {
+    color: rgb(174, 174, 174);
+}
+
+.optional a {
+    color: rgb(174, 174, 174);
+}
+
+.due {
+    font-weight: 700;
+}
+
 .mobi {
     display: none;
 }
@@ -324,16 +336,11 @@ li {
         color: #000;
     }
 
-    #syllabus h3 {
-        line-height: 0.8;
-    }
 
     h3 {
         font-size: 60px;
         margin-bottom: 5px;
     }
-
-
 
     p {
         font-size: 21px;

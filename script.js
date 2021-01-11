@@ -1,8 +1,5 @@
-$(window).on('beforeunload', function() {
-    $(window).scrollTop(0);
-});
-
 $(document).ready(function() {
+    $("html,body").animate({scrollTop: 0}, 100);
     if (window.matchMedia('(min-width: 768px)').matches) {
         $(".sec").css("margin-top", $("nav").outerHeight()+10);
 
@@ -39,13 +36,15 @@ $(document).ready(function() {
 
 
     $("nav a").click(function() {
-        $(window).scrollTop(0);
+        $("html,body").animate({scrollTop: 0}, 100);
         $("nav div").removeClass("active");
         let thisLink = $(this).attr("href");
         $(".sec").hide();
         $(thisLink).show();
 
         $(this).closest("div").addClass("active");
+
+        $(".syl-text").hide();
     })
 
 
@@ -54,4 +53,24 @@ $(document).ready(function() {
         $(this).closest(".syl-sec").find(".syl-text").slideToggle();
     })
 
+})
+
+$(window).resize(function() {
+    if (window.matchMedia('(max-width: 768px)').matches) {
+        $(".menu").click(function() {
+            if($("nav").hasClass("open")) {
+                $("nav").removeClass("open");
+                $(".menu h1").text("Menu +");
+            } else {
+                $("nav").addClass("open");
+                $(".menu h1").text("Menu —");
+            }
+
+        })
+
+        $("nav a").click(function() {
+            $("nav").removeClass("open");
+            $(".menu h1").text("Menu +");
+        });
+    }
 })
